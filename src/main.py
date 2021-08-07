@@ -8,15 +8,12 @@ board = chess.Board()
 
 node = game = utils_game.setup_game()
 
-while True:
+while not board.is_game_over():
     utils_print.print_board(board)
 
     random_move = utils_move.find_random_move(board)
+    print("Move Played: ", board.san(random_move))
     board.push(random_move)
     node = node.add_variation(random_move)
-    print("Move Played: ", board.san(random_move))
 
-    decisive_result = utils_game.record_game_result(game, board)
-
-    if decisive_result:
-        break
+result = utils_game.record_game_result(game, board)

@@ -18,19 +18,13 @@ def record_game_result(game, board):
         print("Checkmate!")
         utils_print.print_game(game, board)
         utils_print.print_board(board)
-        return True
 
     elif board.is_stalemate():
         print("Stalemate!")
         utils_print.print_game(game, board)
         utils_print.print_board(board)
-        return True
 
     elif board.is_insufficient_material():
         print("Insufficient material!")
         utils_print.print_game(game, board)
         utils_print.print_board(board)
-        return True
-
-    else:
-        return False

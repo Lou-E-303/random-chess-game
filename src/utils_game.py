@@ -1,5 +1,5 @@
 import chess.pgn
-import utils_print
+import utils_io
 
 
 def setup_game():
@@ -13,18 +13,9 @@ def setup_game():
     return new_game
 
 
-def record_game_result(game, board):
-    if board.is_checkmate():
-        print("Checkmate!")
-        utils_print.print_game(game, board)
-        utils_print.print_board(board)
+def record_game_result(game, board, filepath):
+        utils_io.print_game(game, board)
+        utils_io.print_board(board)
+        utils_io.save_pgn_to_file(game, filepath)
 
-    elif board.is_stalemate():
-        print("Stalemate!")
-        utils_print.print_game(game, board)
-        utils_print.print_board(board)
 
-    elif board.is_insufficient_material():
-        print("Insufficient material!")
-        utils_print.print_game(game, board)
-        utils_print.print_board(board)

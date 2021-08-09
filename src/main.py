@@ -5,7 +5,7 @@ import utils_game
 import utils_move
 
 output_directory = "./src/output_pgn/"
-output_filepath = "test.pgn"
+output_filename = "test.pgn"
 
 board = chess.Board()
 
@@ -19,4 +19,4 @@ while not board.is_game_over():
     board.push(random_move)
     node = node.add_variation(random_move)
 
-result = utils_game.record_game_result(game, board, output_directory + output_filepath)
+result = utils_game.record_game_result(game, board, output_directory + output_filename)

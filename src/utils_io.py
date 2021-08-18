@@ -1,6 +1,3 @@
-import os
-
-
 def print_board(board_to_print):
     print("\n")
     print(board_to_print)

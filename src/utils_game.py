@@ -14,8 +14,6 @@ def setup_game():
 
 
 def record_game_result(game, board, filepath):
-        utils_io.print_game(game, board)
-        utils_io.print_board(board)
-        utils_io.save_pgn_to_file(game, filepath)
-
-
+    utils_io.print_game(game, board)
+    utils_io.print_board(board)
+    utils_io.save_pgn_to_file(game, filepath)

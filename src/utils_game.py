@@ -26,15 +26,21 @@ def play_game(game, board, filepath, white_player, black_player):
     while not board.is_game_over():
         utils_io.print_board(board)
 
-        if board.turn == chess.WHITE:
-            next_move = white_player.make_move(board)
-        elif board.turn == chess.BLACK:
-            next_move = black_player.make_move(board)
-        else:
-            raise ValueError('Somehow, it\'s no-one\'s turn? Not sure how that is possible. Turn: ' + board.turn)
-
-        print("Move Played: ", board.san(next_move))
-        board.push(next_move)
-        node = node.add_variation(next_move)
+        node = play_next_move(board, white_player, black_player, node)
 
     record_game_result(game, board, filepath)
+
+
+def play_next_move(board, white_player, black_player, node):
+    if board.turn == chess.WHITE:
+        next_move = white_player.make_move(board)
+    elif board.turn == chess.BLACK:
+        next_move = black_player.make_move(board)
+    else:
+        raise ValueError('Somehow, it\'s no-one\'s turn? Not sure how that is possible. Turn: ' + board.turn)
+
+    print("Move Played: ", board.san(next_move))
+    board.push(next_move)
+    node = node.add_variation(next_move)
+
+    return node

@@ -1,6 +1,6 @@
 import chess.pgn
 import utils_io
-import utils_move
+import random
 
 
 def setup_game():
@@ -44,3 +44,10 @@ def play_next_move(board, white_player, black_player, node):
     node = node.add_variation(next_move)
 
     return node
+
+
+def find_random_move(board):
+    legal_moves = list(board.legal_moves)
+    random_move_index = random.randint(0, len(legal_moves) - 1)
+    random_move = legal_moves[random_move_index]
+    return random_move

@@ -5,12 +5,7 @@ import random
 
 def setup_game():
     new_game = chess.pgn.Game()
-    new_game.headers["Event"] = "A test chess game with random moves"
-    new_game.headers["Site"] = "The CLI"
-    new_game.headers["Date"] = "1st January 1970"
-    new_game.headers["Round"] = ""
-    new_game.headers["White"] = ""
-    new_game.headers["Black"] = ""
+    new_game = utils_io.set_pgn_headers(new_game)
     return new_game
 
 
@@ -51,3 +46,11 @@ def find_random_move(board):
     random_move_index = random.randint(0, len(legal_moves) - 1)
     random_move = legal_moves[random_move_index]
     return random_move
+
+
+def check_move_is_valid(board, move):
+    legal_moves = list(board.legal_moves)
+    for legal_move in legal_moves:
+        if move == legal_move:
+            return True
+    return False

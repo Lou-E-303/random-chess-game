@@ -11,3 +11,14 @@ def print_game(game_to_print, board):
 
 def save_pgn_to_file(game_to_save, filepath):
     print(game_to_save, file=open(filepath, "w"), end="\n\n")
+
+
+def set_pgn_headers(game):
+    game.headers["Event"] = "A test chess game with random moves"
+    game.headers["Site"] = "The CLI"
+    game.headers["Date"] = "1st January 1970"
+    game.headers["Round"] = ""
+    game.headers["White"] = ""
+    game.headers["Black"] = ""
+
+    return game

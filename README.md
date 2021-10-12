@@ -5,4 +5,6 @@ I'm mostly just using this to get used to both Python and the python-chess libra
 
 I'm writing this to run on a Raspberry Pi. End goal is to design an always-on low-complexity chess engine which can be played against at any time over the Internet.
 
+python-chess docs [here.](https://python-chess.readthedocs.io/en/latest/)
+
 [Trello board](https://trello.com/b/ArlCR1fD/raspberry-pi-chess), to keep me honest.

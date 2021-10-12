@@ -6,7 +6,7 @@ output_directory = "./src/output_pgn/"
 output_filename = "test.pgn"
 
 white_player = players.AiPlayer()
-black_player = players.AiPlayer()
+black_player = players.HumanPlayer()
 
 board = chess.Board()
 

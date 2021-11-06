@@ -1,6 +1,7 @@
 import chess.pgn
 import utils_io
 import random
+import players
 
 
 def setup_game():
@@ -19,11 +20,39 @@ def play_game(game, board, filepath, white_player, black_player):
     node = game  # Define root node for game
 
     while not board.is_game_over():
-        utils_io.print_board(board)
+        print("DEBUG: Ply = ", board.ply())
+        # if check_for_human_players_turn(board, white_player, black_player) and board.ply() > 0:
+        #     utils_io.print_flipped_board(board)
+        # else:
+        #     utils_io.print_board(board)
+
+        if check_for_computer_game(white_player, black_player) or board.ply() == 0:
+            utils_io.print_board(board)
+        else:
+            utils_io.print_flipped_board(board)
 
         node = play_next_move(board, white_player, black_player, node)
 
     record_game_result(game, board, filepath)
+
+
+def check_for_human_players_turn(board, white_player, black_player):
+    human_players_turn = False
+
+    if board.turn == chess.WHITE and type(white_player) is players.HumanPlayer:
+        print("White to play.")
+        human_players_turn = True
+    elif board.turn == chess.BLACK and type(black_player) is players.HumanPlayer:
+        print("Black to play.")
+        human_players_turn = True
+
+    return human_players_turn
+
+def check_for_computer_game(white_player, black_player):
+    if type(white_player) == players.AiPlayer and type(black_player) == players.AiPlayer:
+        return True
+    else:
+        return False
 
 
 def play_next_move(board, white_player, black_player, node):

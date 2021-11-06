@@ -5,8 +5,8 @@ import players
 output_directory = "./src/output_pgn/"
 output_filename = "test.pgn"
 
-white_player = players.AiPlayer()
-black_player = players.HumanPlayer()
+white_player = players.HumanPlayer()
+black_player = players.AiPlayer()
 
 board = chess.Board()
 

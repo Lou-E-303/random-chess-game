@@ -10,16 +10,14 @@ class AiPlayer:
 
 class HumanPlayer:
     def make_move(self, board):
-        legal_moves = list(board.legal_moves)
         while True:
-            move = self.get_human_move_input(legal_moves, board)
+            move = self.get_human_move_input(board)
             if utils_game.check_move_is_valid(board, move):
                 break
             else:
                 print("Move: " + chess.move.uci(move) + " is invalid. Please try again.")
         return move
 
-    def get_human_move_input(self, legal_moves, board):
-        print("Legal Moves: ", legal_moves)
+    def get_human_move_input(self, board):
         selected_move = board.parse_san(input("Please enter a move in algebraic notation: "))
         return selected_move

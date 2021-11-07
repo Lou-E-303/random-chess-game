@@ -10,7 +10,7 @@ def setup_game():
     return new_game
 
 
-def record_game_result(game, board, filepath):
+def record_game(game, board, filepath):
     utils_io.print_game(game, board)
     utils_io.print_board(board)
     utils_io.save_pgn_to_file(game, filepath)
@@ -21,18 +21,15 @@ def play_game(game, board, filepath, white_player, black_player):
 
     while not board.is_game_over():
         # This will need to be more robust to support custom positions
-        if type(black_player) == players.HumanPlayer and board.ply() > 0:
-            if board.turn == chess.WHITE:
-                utils_io.print_board(board)
-            else:
-                utils_io.print_flipped_board(board)
+        # type(starting_player)....... and board.turn != starting_colour etc. etc.
+        if type(black_player) == players.HumanPlayer and board.turn != chess.WHITE:
+            utils_io.print_flipped_board(board)
         else:
             utils_io.print_board(board)
 
         node = play_next_move(board, white_player, black_player, node)
 
-
-    record_game_result(game, board, filepath)
+    record_game(game, board, filepath)
 
 
 def play_next_move(board, white_player, black_player, node):

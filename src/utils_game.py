@@ -57,6 +57,6 @@ def find_random_move(board):
 def check_move_is_valid(board, move):
     legal_moves = list(board.legal_moves)
     for legal_move in legal_moves:
-        if move == legal_move:
+        if move == board.san(legal_move):
             return True
     return False

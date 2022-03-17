@@ -1,15 +1,18 @@
 import chess
 
+
 def print_board(board_to_print):
     print("\n")
     print(board_to_print)
     print("\n")
+
 
 def print_flipped_board(board_to_print):
     print("\n")
     flipped_board = board_to_print.transform(chess.flip_diagonal)
     print(flipped_board.transform(chess.flip_anti_diagonal))  # This is so hacky and annoying but it works
     print("\n")
+
 
 def print_game(game_to_print, board):
     game_to_print.headers["Result"] = board.result()

@@ -1,4 +1,3 @@
-import chess
 import utils_game
 
 

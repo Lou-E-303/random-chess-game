@@ -1,6 +1,6 @@
 import chess.pgn
-import utils_io
 import random
+import utils_io
 import players
 
 

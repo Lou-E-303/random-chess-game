@@ -18,11 +18,11 @@ def record_game(game, board, filepath):
 
 def play_game(game, board, filepath, white_player, black_player):
     node = game  # Define root node for game
+    starting_player = white_player  # These exist to eventually support position imports
+    starting_colour = chess.WHITE   # i.e. importing a FEN and playing on from the position
 
     while not board.is_game_over():
-        # This will need to be more robust to support custom positions
-        # type(starting_player)....... and board.turn != starting_colour etc. etc.
-        if type(black_player) == players.HumanPlayer and board.turn != chess.WHITE:
+        if type(starting_player) == players.HumanPlayer and board.turn != starting_colour:
             utils_io.print_flipped_board(board)
         else:
             utils_io.print_board(board)

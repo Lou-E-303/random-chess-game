@@ -20,3 +20,17 @@ class HumanPlayer:
     def get_human_move_input(self):
         selected_move = input("Please enter a move in algebraic notation: ")
         return selected_move
+
+
+def get_white_player():
+    if input("Should a human play White? Enter Y for Yes or N for No: ").upper() == "Y":
+        return HumanPlayer()
+    else:
+        return AiPlayer()
+
+
+def get_black_player():
+    if input("Should a human play Black? Enter Y for Yes or N for No: ").upper() == "Y":
+        return HumanPlayer()
+    else:
+        return AiPlayer()

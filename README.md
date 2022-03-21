@@ -1,6 +1,8 @@
 # Intro
 
-A simple demonstration of how to use the [python-chess](https://github.com/niklasf/python-chess) library to generate a completely random game of chess and export the result as a [PGN](https://en.wikipedia.org/wiki/Portable_Game_Notation).
+A simple demonstration of how to use the [python-chess](https://github.com/niklasf/python-chess) library to generate a game of chess and export the result as a [PGN](https://en.wikipedia.org/wiki/Portable_Game_Notation).
+
+The 'AI' (I use this term very loosely) plays completely random moves.
 
 A human may also play either or both sides.
 

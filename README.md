@@ -1,9 +1,20 @@
-# random-chess-game
+# Intro
+
 A simple demonstration of how to use the [python-chess](https://github.com/niklasf/python-chess) library to generate a completely random game of chess and export the result as a [PGN](https://en.wikipedia.org/wiki/Portable_Game_Notation).
 
 A human may also play either or both sides.
 
 I'm mostly just using this to get used to both Python and the python-chess library in order to eventually move on to bigger and better chess projects.
+
+# Run
+
+Run `python3 src/main.py`.
+
+You will be prompted to choose whether a human plays White and/or Black.
+
+Upon game completion, the game and result will be recorded in a PGN file.  
+
+# Links
 
 python-chess docs [here.](https://python-chess.readthedocs.io/en/latest/)
 

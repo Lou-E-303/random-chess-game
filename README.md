@@ -4,8 +4,6 @@ A simple demonstration of how to use the [python-chess](https://github.com/nikla
 
 A human may also play either or both sides.
 
-I'm mostly just using this to get used to both Python and the python-chess library in order to eventually move on to bigger and better chess projects.
-
 # Run
 
 Run `python3 src/main.py`.

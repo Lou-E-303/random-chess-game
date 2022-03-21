@@ -1,5 +1,5 @@
+import os
 import chess
-
 
 def print_board(board_to_print):
     print("\n")
@@ -17,8 +17,9 @@ def print_game(game_to_print, board):
     print(game_to_print)
 
 
-def save_pgn_to_file(game_to_save, filepath):
-    print(game_to_save, file=open(filepath, "w"), end="\n\n")
+def save_pgn_to_file(game_to_save, directory):
+    new_index = str(len(os.listdir(directory)))
+    print(game_to_save, file=open(directory + '/game_' + new_index + '.pgn', 'w'), end="\n\n")
 
 
 def set_pgn_headers(game):

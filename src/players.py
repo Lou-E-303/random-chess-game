@@ -2,12 +2,16 @@ import utils_game
 
 
 class AiPlayer:
+    name = "AI Player"
+
     def make_move(self, board):
         move = utils_game.find_random_move(board)
         return move
 
 
 class HumanPlayer:
+    name = "Human Player"
+
     def make_move(self, board):
         while True:
             move = self.get_human_move_input()

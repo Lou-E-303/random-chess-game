@@ -4,9 +4,9 @@ import utils_io
 import players
 
 
-def setup_game():
+def setup_game(white_player, black_player):
     new_game = chess.pgn.Game()
-    new_game = utils_io.set_pgn_headers(new_game)
+    new_game = utils_io.set_pgn_headers(new_game, white_player, black_player)
     return new_game
 
 

@@ -1,6 +1,7 @@
 import os
 import chess
 
+
 def print_board(board_to_print):
     print("\n")
     print(board_to_print)
@@ -22,12 +23,12 @@ def save_pgn_to_file(game_to_save, directory):
     print(game_to_save, file=open(directory + '/game_' + new_index + '.pgn', 'w'), end="\n\n")
 
 
-def set_pgn_headers(game):
-    game.headers["Event"] = "A test chess game with random moves"
+def set_pgn_headers(game, white_player, black_player):
+    game.headers["Event"] = "A test chess game"
     game.headers["Site"] = "The CLI"
     game.headers["Date"] = "1st January 1970"
-    game.headers["Round"] = ""
-    game.headers["White"] = ""
-    game.headers["Black"] = ""
+    game.headers["Round"] = "0"
+    game.headers["White"] = white_player.name
+    game.headers["Black"] = black_player.name
 
     return game

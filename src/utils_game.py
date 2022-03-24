@@ -35,10 +35,8 @@ def play_game(game, board, filepath, white_player, black_player):
 def play_next_move(board, white_player, black_player, node):
     if board.turn == chess.WHITE:
         next_move = white_player.make_move(board)
-    elif board.turn == chess.BLACK:
-        next_move = black_player.make_move(board)
     else:
-        raise ValueError('Somehow, it\'s no-one\'s turn? Not sure how that is possible. Turn: ' + board.turn)
+        next_move = black_player.make_move(board)
 
     print("Move Played: ", board.san(next_move))
     board.push(next_move)

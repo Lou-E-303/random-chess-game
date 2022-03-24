@@ -18,8 +18,8 @@ def record_game(game, board, filepath):
 
 def play_game(game, board, filepath, white_player, black_player):
     node = game  # Define root node for game
-    starting_player = white_player  # These exist to eventually support position imports
-    starting_colour = chess.WHITE   # i.e. importing a FEN and playing on from the position
+    starting_player = white_player
+    starting_colour = chess.WHITE
 
     while not board.is_game_over():
         if type(starting_player) == players.HumanPlayer and board.turn != starting_colour:

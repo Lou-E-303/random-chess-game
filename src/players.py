@@ -26,15 +26,8 @@ class HumanPlayer:
         return selected_move
 
 
-def get_white_player():
-    if input("Should a human play White? Enter Y for Yes or N for No: ").upper() == "Y":
-        return HumanPlayer()
-    else:
-        return AiPlayer()
-
-
-def get_black_player():
-    if input("Should a human play Black? Enter Y for Yes or N for No: ").upper() == "Y":
+def get_player_for_colour(colour):
+    if input("Should a human play %s? Enter Y for Yes or N for No: " % colour).upper() == "Y":
         return HumanPlayer()
     else:
         return AiPlayer()

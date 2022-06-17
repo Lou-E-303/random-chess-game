@@ -4,8 +4,8 @@ import players
 
 output_directory = "./output_pgn/"
 
-white_player = players.get_white_player()
-black_player = players.get_black_player()
+white_player = players.get_player_for_colour("White")
+black_player = players.get_player_for_colour("Black")
 
 board = chess.Board()
 

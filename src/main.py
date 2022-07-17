@@ -9,7 +9,9 @@ black_player = players.get_player_for_colour("Black")
 
 board = chess.Board()
 
+starting_colour = board.turn
+
 game = utils_game.setup_game(white_player, black_player)
 
-utils_game.play_game(game, board, output_directory, white_player, black_player)
+utils_game.play_game(game, board, output_directory, white_player, black_player, starting_colour)
 

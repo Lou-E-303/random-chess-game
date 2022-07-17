@@ -16,13 +16,11 @@ def record_game(game, board, filepath):
     utils_io.save_pgn_to_file(game, filepath)
 
 
-def play_game(game, board, filepath, white_player, black_player):
+def play_game(game, board, filepath, white_player, black_player, starting_colour):
     node = game  # Define root node for game
-    starting_player = white_player
-    starting_colour = chess.WHITE
 
     while not board.is_game_over():
-        if type(starting_player) == players.HumanPlayer and board.turn != starting_colour:
+        if board.turn != starting_colour:
             utils_io.print_flipped_board(board)
         else:
             utils_io.print_board(board)

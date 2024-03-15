@@ -17,5 +17,3 @@ Upon game completion, the game and result will be recorded in a PGN file.
 # Links
 
 python-chess docs [here.](https://python-chess.readthedocs.io/en/latest/)
-
-[Trello board](https://trello.com/b/ArlCR1fD/raspberry-pi-chess), to keep me honest.
